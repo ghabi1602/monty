@@ -19,9 +19,6 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-void fcheck(int, char **);
-void finterpret(char *);
-
 /**
  * instruction_s - opcode and its function
  * @opcode: operation code
@@ -32,5 +29,8 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void fcheck(int, char **);
+void finterpret(char *);
 
 #endif
