@@ -8,7 +8,33 @@
  */
 int main(int argc, char **argv)
 {
+	stack_t stack;
+	char *file, *buff = NULL, **arr;
+	int file;
+	size_t len = 0;
+	void (*f)(stack_t, int);
+
 	fcheck(argc, argv);
-	finterpret(argv[1]);
+	stack = malloc(sizeof(stack_t));
+	if (!stack)
+	{
+		perror("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	stack->prev = NULL;
+	stack->next = NULL;
+	file = open(argv[1], O_RDONLY);
+	if (!file)
+	{
+		fprintf(stderr, "Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	while (getline(&buff, &len, file) != -1)
+	{
+		arr = check&parse(buff);
+		f = execute(arr[0]);
+		f(stack, arr[1]);
+	}
+	close(file);
 	return (0);
 }
