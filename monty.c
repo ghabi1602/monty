@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	}
 	while (getline(&buff, &len, file) != -1)
 	{
-		arr = check&parse(buff);
+		arr = parse(buff);
 		f = execute(arr[0]);
 		f(stack, arr[1]);
 	}

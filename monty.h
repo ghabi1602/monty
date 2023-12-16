@@ -32,5 +32,7 @@ typedef struct instruction_s
 
 void fcheck(int, char **);
 void finterpret(char *);
+char **parse(char *);
+
 
 #endif
