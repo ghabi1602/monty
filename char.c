@@ -1,6 +1,6 @@
 #include "monty.h"
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * pchar_handler - handles the pchar instruction
  * @stack: double pointer to the stack to push to

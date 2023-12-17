@@ -1,5 +1,6 @@
 #include "monty.h"
 #include "lists.h"
+#include <stdio.h>
 
 data_t data = DATA_INIT;
 
